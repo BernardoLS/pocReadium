@@ -1,7 +1,8 @@
-package com.example.pocreadium
+package com.example.pocreadium.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pocreadium.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
