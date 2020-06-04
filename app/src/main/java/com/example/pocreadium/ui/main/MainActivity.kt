@@ -9,6 +9,7 @@ import com.example.pocreadium.BuildConfig.DEBUG
 import com.example.pocreadium.R
 import com.example.pocreadium.ui.epubReader.Book
 import com.example.pocreadium.ui.epubReader.EpubReaderActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -55,7 +56,7 @@ class MainActivity() : AppCompatActivity(), CoroutineScope {
             this.filesDir.path + "/"
         }
 
-        buttonClick()
+        button_open_epub.setOnClickListener { buttonClick() }
     }
 
     override fun onStart() {
@@ -111,9 +112,13 @@ class MainActivity() : AppCompatActivity(), CoroutineScope {
             progression = null
         )
         val publicationPath = R2DIRECTORY + book.fileName
+        println("---- $R2DIRECTORY")
+        println("---- ${book.fileName}")
         val file = File(book.href)
         val parser = EpubParser()
+        println("---- $parser")
         val pub = parser.parse(publicationPath)
+        println("---- $pub")
         pub?.let {
             prepareAndStartActivity(pub, book, file, publicationPath, pub.publication)
         }
