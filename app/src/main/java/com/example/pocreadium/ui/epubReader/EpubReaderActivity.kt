@@ -10,6 +10,10 @@ class EpubReaderActivity : R2EpubActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_epub_reader)
 
+        resourcePager.offscreenPageLimit = 1
+        currentPagerPosition = publication.readingOrder.indexOfFirst { it.href == currentLocation?.href }
+        resourcePager.currentItem = currentPagerPosition
+
     }
 
 

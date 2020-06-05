@@ -58,6 +58,21 @@ dependencies {
         exclude group: 'org.parboiled'
     }
 
+    //timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //zerotournround
+    implementation 'org.zeroturnaround:zt-zip:1.13'
+
+    // async functions (only ~70k)
+    final KOVENANT_VERSION = '3.3.0'
+    implementation "nl.komponents.kovenant:kovenant:$KOVENANT_VERSION"
+    implementation "nl.komponents.kovenant:kovenant-core:$KOVENANT_VERSION"
+    implementation "nl.komponents.kovenant:kovenant-android:$KOVENANT_VERSION"
+    implementation "nl.komponents.kovenant:kovenant-combine:$KOVENANT_VERSION"
+    implementation "nl.komponents.kovenant:kovenant-jvm:$KOVENANT_VERSION"
+    implementation "nl.komponents.kovenant:kovenant-functional:$KOVENANT_VERSION"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
